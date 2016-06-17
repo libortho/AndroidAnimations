@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ public class EditNameDialogFragment extends DialogFragment {
 
     public static final String KEY_ANIM_TYPE = "anim_type";
     public static final String KEY_ANIM_DURATION = "anim_duration";
+
 
     public EditNameDialogFragment() {
         // Empty constructor is required for DialogFragment
@@ -60,34 +62,39 @@ public class EditNameDialogFragment extends DialogFragment {
             int width = ViewGroup.LayoutParams.MATCH_PARENT;
             int height = ViewGroup.LayoutParams.MATCH_PARENT;
             dialog.getWindow().setLayout(width, height);
+            dialog.setCancelable(true);
+
+
+            DisplayMetrics displayMetrics = new DisplayMetrics();
+            dialog.getWindow().getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
 
             final View decorView = dialog
                 .getWindow()
                 .getDecorView();
 
-
             switch(animationType){
                 case DialogFragmentDemoAct.ANIM_TYPE_LEFT:
-                    decorView.setTranslationX(-700);
-                    decorView.animate().translationXBy(700).setDuration(duration)
+                    decorView.setTranslationX(-displayMetrics.widthPixels);
+                    decorView.animate().translationXBy(displayMetrics.widthPixels).setDuration(duration)
                              .setInterpolator(new AccelerateDecelerateInterpolator());
 
                     break;
                 case DialogFragmentDemoAct.ANIM_TYPE_RIGHT:
-                    decorView.setTranslationX(700);
-                    decorView.animate().translationXBy(-700).setDuration(duration)
+                    decorView.setTranslationX(displayMetrics.widthPixels);
+                    decorView.animate().translationXBy(-displayMetrics.widthPixels).setDuration(duration)
                              .setInterpolator(new AccelerateDecelerateInterpolator());
 
                     break;
                 case DialogFragmentDemoAct.ANIM_TYPE_TOP:
-                    decorView.setTranslationY(-1200);
-                    decorView.animate().translationYBy(1200).setDuration(duration)
+                    decorView.setTranslationY(-displayMetrics.heightPixels);
+                    decorView.animate().translationYBy(displayMetrics.heightPixels).setDuration(duration)
                              .setInterpolator(new AccelerateDecelerateInterpolator());
 
                     break;
                 case DialogFragmentDemoAct.ANIM_TYPE_BOTTOM:
-                    decorView.setTranslationY(1200);
-                    decorView.animate().translationYBy(-1200).setDuration(duration)
+                    decorView.setTranslationY(displayMetrics.heightPixels);
+                    decorView.animate().translationYBy(-displayMetrics.heightPixels).setDuration(duration)
                              .setInterpolator(new AccelerateDecelerateInterpolator());
                     break;
                 case DialogFragmentDemoAct.ANIM_TYPE_FADE_IN:
@@ -99,10 +106,8 @@ public class EditNameDialogFragment extends DialogFragment {
                     break;
             }
 
-
         }
     }
-
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {

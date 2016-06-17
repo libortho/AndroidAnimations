@@ -5,8 +5,10 @@ import com.vecoder.demo.animations.R;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
 import android.view.Window;
@@ -34,6 +36,10 @@ public class DialogFragmentDemoAct extends AppCompatActivity implements View.OnC
 
     private int mAnimationType = ANIM_TYPE_LEFT;
 
+    private int mDisplayHeightPx = 0;
+
+    private int mDisplayWidthPx = 0;
+
 
     private void bindViews(){
         Button btnShowDialogFragment = (Button) findViewById(R.id.btnShowDialogFragment);
@@ -56,6 +62,13 @@ public class DialogFragmentDemoAct extends AppCompatActivity implements View.OnC
         setContentView(R.layout.activity_dialoganimdemo);
         bindViews();
 
+        DisplayMetrics displayMetrics = new DisplayMetrics();
+
+        getWindowManager().getDefaultDisplay().getMetrics(displayMetrics);
+
+        mDisplayHeightPx = displayMetrics.heightPixels;
+        mDisplayWidthPx = displayMetrics.widthPixels;
+
     }
 
     private void showEditDialog() {
@@ -66,10 +79,16 @@ public class DialogFragmentDemoAct extends AppCompatActivity implements View.OnC
         Bundle bundle = new Bundle();
         bundle.putInt(EditNameDialogFragment.KEY_ANIM_TYPE, mAnimationType);
         String durationValue = mEtAnimationDuration.getText().toString();
-        Integer.valueOf(durationValue);
-        bundle.putInt(EditNameDialogFragment.KEY_ANIM_DURATION, Integer.valueOf(durationValue));
+        int duration;
+        try {
+            duration = Integer.valueOf(durationValue);
+        }catch (NumberFormatException e){
+            duration = 1000;
+        }
+        bundle.putInt(EditNameDialogFragment.KEY_ANIM_DURATION, duration);
 
         editNameDialogFragment.setArguments(bundle);
+        editNameDialogFragment.setStyle(DialogFragment.STYLE_NORMAL, R.style.CustomDialog);
         editNameDialogFragment.show(fm, "fragment_edit_name");
     }
 
