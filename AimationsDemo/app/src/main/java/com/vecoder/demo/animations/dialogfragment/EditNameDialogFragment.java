@@ -16,12 +16,13 @@ import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.widget.EditText;
+import android.widget.ImageView;
 
 /**
  * Created by v.gacina on 6/16/2016.
  */
 public class EditNameDialogFragment extends DialogFragment {
-    private EditText mEditText;
+    private ImageView mImageView;
 
     public static final String KEY_ANIM_TYPE = "anim_type";
     public static final String KEY_ANIM_DURATION = "anim_duration";
@@ -113,14 +114,14 @@ public class EditNameDialogFragment extends DialogFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         // Get field from view
-        mEditText = (EditText) view.findViewById(R.id.txt_your_name);
+        mImageView = (ImageView) view.findViewById(R.id.ivDemoAd);
+
         // Fetch arguments from bundle and set title
-        String title = getArguments().getString("title", "Enter Name");
-        getDialog().setTitle(title);
-        // Show soft keyboard automatically and request focus to field
-        mEditText.requestFocus();
-        getDialog().getWindow().setSoftInputMode(
-            WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
+        //String title = getArguments().getString("title", "Enter Name");
+       // getDialog().setTitle(title);
+
+        //getDialog().getWindow().setSoftInputMode(
+            //WindowManager.LayoutParams.SOFT_INPUT_STATE_VISIBLE);
     }
 
     @NonNull

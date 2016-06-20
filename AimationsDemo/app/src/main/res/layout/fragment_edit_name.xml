@@ -7,13 +7,11 @@
     android:padding="0dp"
     android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/lbl_your_name" android:text="Your name"
-        android:layout_width="wrap_content" android:layout_height="wrap_content" />
 
-    <EditText
-        android:id="@+id/txt_your_name"
-        android:layout_width="match_parent"  android:layout_height="wrap_content"
-        android:inputType="text"
-        android:imeOptions="actionDone" />
+    <ImageView
+        android:id="@+id/ivDemoAd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/nutellaandroid"
+        android:background="@android:color/holo_green_light"/>
 </LinearLayout>
