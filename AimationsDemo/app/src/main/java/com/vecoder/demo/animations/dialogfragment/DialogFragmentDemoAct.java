@@ -3,6 +3,7 @@ package com.vecoder.demo.animations.dialogfragment;
 
 import com.vecoder.demo.animations.R;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
@@ -69,6 +70,44 @@ public class DialogFragmentDemoAct extends AppCompatActivity implements View.OnC
         mDisplayHeightPx = displayMetrics.heightPixels;
         mDisplayWidthPx = displayMetrics.widthPixels;
 
+        Log.d(LOG_TAG, "On Created. savedInstanceState " + (savedInstanceState != null ? " not null" : " is null"));
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        Log.d(LOG_TAG, "On Stopped");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        Log.d(LOG_TAG, "On Paused");
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        Log.d(LOG_TAG, "On Destroyed");
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Log.d(LOG_TAG, "On Resume");
+    }
+
+    @Override
+    public void onConfigurationChanged(Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        Log.d(LOG_TAG, "onConfigurationChanged");
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        Log.d(LOG_TAG, "onSaveInstanceState.  outState " + (outState != null? " not null" : "null"));
     }
 
     private void showEditDialog() {
