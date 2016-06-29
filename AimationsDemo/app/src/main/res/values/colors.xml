@@ -3,4 +3,7 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="adview_background_color">#FFFFFF</color>
+    <color name="ad_type_header">#AAAAAA</color>
 </resources>

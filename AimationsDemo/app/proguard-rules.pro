@@ -15,3 +15,20 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+
+
+-dontwarn retrofit2.**
+-keep class retrofit2.** { *; }
+-keepattributes Signature
+-keepattributes Exceptions
+-dontwarn okio.**
+
+-dontwarn android.net.http.**
+-keep class android.net.http.AndroidHttpClient
+
+-dontwarn com.google.android.gms.**
+-keep class com.google.android.gms.**
+
+-keepclassmembers class com.improvedigital.mobile360sdk.core.JavascriptInterface {
+    public *;
+}
