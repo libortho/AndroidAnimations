@@ -2,6 +2,7 @@ package com.vecoder.demo.animations;
 
 import com.vecoder.demo.animations.dialogfragment.DialogFragmentDemoAct;
 import com.vecoder.demo.animations.imdig.ScrollViewActivity;
+import com.vecoder.demo.animations.imdig.VideoPlayerDemoActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -22,7 +23,11 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
 
     private ListView mListView;
 
-    private static final String[] ITEMS = {"Dialog fragment Animations", "Improve Digital Ads"};
+    private static final String[] ITEMS = {
+        "Dialog fragment Animations",
+        "Improve Digital Ads",
+        "Improve Digital Video Player"
+    };
 
 
     @Override
@@ -57,6 +62,10 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
                 break;
             case 1:
                 gotoActivity = new Intent(this, ScrollViewActivity.class);
+                startActivity(gotoActivity);
+                break;
+            case 2:
+                gotoActivity = new Intent(this, VideoPlayerDemoActivity.class);
                 startActivity(gotoActivity);
                 break;
             default:

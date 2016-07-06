@@ -21,6 +21,9 @@
 
         <activity android:name=".imdig.ScrollViewActivity"/>
 
+        <activity android:name=".imdig.VideoPlayerDemoActivity"
+            android:label="Improve Digital Video Player"/>
+
         <activity android:name=".MainChooser"
             android:label="Animations Demo">
             <intent-filter>
