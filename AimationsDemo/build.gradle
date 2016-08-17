@@ -18,6 +18,10 @@ allprojects {
 
         // 360SDK repository
         maven { url 'https://repo.360yield.com/nexus/content/groups/public/' }
+
+        flatDir{
+            dirs 'libs'
+        }
     }
 }
 

@@ -4,16 +4,21 @@ import com.improvedigital.mobile360sdk.player.ImproveDigitalVideoPlayer;
 import com.improvedigital.mobile360sdk.player.VideoPlayerStateListener;
 import com.vecoder.demo.animations.R;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.IntentSender;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.KeyEvent;
 
 /**
  * Created by v.gacina on 7/6/2016.
  */
-public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoPlayerStateListener{
+public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoPlayerStateListener
+{
 
 
     private static final String TAG = "VideoPlayerDemoActivity";
@@ -28,7 +33,7 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
 
         bindViews();
         if(mImproveDigitalVideoPlayer != null){
-            mImproveDigitalVideoPlayer.setVideoPlayerStateListener(this);
+            //mImproveDigitalVideoPlayer.setVideoPlayerStateListener(this);
 
             mImproveDigitalVideoPlayer.setVideoUrl("http://www.improvedigital.com/main/wp-content/uploads/2014/11/Final_video_latest_.mp4");
             setCustomResources();
@@ -48,7 +53,7 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
         mImproveDigitalVideoPlayer.setCustomControlsBackground("#80CCBC08");
     }
 
-    @Override
+    /*@Override
     public void onVideoPlayerLoadFinished() {
         Log.d(TAG, "onVideoPlayerLoadFinished called");
         mImproveDigitalVideoPlayer.play();
@@ -62,8 +67,22 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
     }
 
     @Override
-    public void onVideoPlayerErrorOccurred(String errorMessage) {
-        Log.d(TAG, "onVideoPlayerErrorOccurred called, message: " + errorMessage);
+    public void onVideoPlayerErrorOccurred(String s, int i) {
+
+    }*/
+
+    @Override
+    public void onVideoPlayerLoadFinished() {
+
+    }
+
+    @Override
+    public void onVideoPlayerPlaybackFinished() {
+
+    }
+
+    @Override
+    public void onVideoPlayerErrorOccurred(String s, int i) {
 
     }
 }
