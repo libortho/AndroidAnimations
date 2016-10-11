@@ -25,6 +25,8 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
 
     private ImproveDigitalVideoPlayer mImproveDigitalVideoPlayer;
 
+    private final static int PLACEMENT_ID = 526705;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,10 +35,11 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
 
         bindViews();
         if(mImproveDigitalVideoPlayer != null){
-            //mImproveDigitalVideoPlayer.setVideoPlayerStateListener(this);
+            mImproveDigitalVideoPlayer.setVideoPlayerStateListener(this);
 
             mImproveDigitalVideoPlayer.setVideoUrl("http://www.improvedigital.com/main/wp-content/uploads/2014/11/Final_video_latest_.mp4");
             setCustomResources();
+            mImproveDigitalVideoPlayer.setPlacementId(PLACEMENT_ID);
             mImproveDigitalVideoPlayer.load();
         }
     }
@@ -53,7 +56,7 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
         mImproveDigitalVideoPlayer.setCustomControlsBackground("#80CCBC08");
     }
 
-    /*@Override
+    @Override
     public void onVideoPlayerLoadFinished() {
         Log.d(TAG, "onVideoPlayerLoadFinished called");
         mImproveDigitalVideoPlayer.play();
@@ -63,21 +66,6 @@ public class VideoPlayerDemoActivity extends AppCompatActivity implements VideoP
     @Override
     public void onVideoPlayerPlaybackFinished() {
         Log.d(TAG, "onVideoPlayerPlaybackFinished called");
-
-    }
-
-    @Override
-    public void onVideoPlayerErrorOccurred(String s, int i) {
-
-    }*/
-
-    @Override
-    public void onVideoPlayerLoadFinished() {
-
-    }
-
-    @Override
-    public void onVideoPlayerPlaybackFinished() {
 
     }
 

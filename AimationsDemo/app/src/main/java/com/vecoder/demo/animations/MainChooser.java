@@ -3,6 +3,7 @@ package com.vecoder.demo.animations;
 import com.vecoder.demo.animations.dialogfragment.DialogFragmentDemoAct;
 import com.vecoder.demo.animations.imdig.ScrollViewActivity;
 import com.vecoder.demo.animations.imdig.VideoPlayerDemoActivity;
+import com.vecoder.demo.animations.webview.SimpleWebActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -26,7 +27,8 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
     private static final String[] ITEMS = {
         "Dialog fragment Animations",
         "Improve Digital Ads",
-        "Improve Digital Video Player"
+        "Improve Digital Video Player",
+        "Simple Web View"
     };
 
 
@@ -66,6 +68,10 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
                 break;
             case 2:
                 gotoActivity = new Intent(this, VideoPlayerDemoActivity.class);
+                startActivity(gotoActivity);
+                break;
+            case 3:
+                gotoActivity = new Intent(this, SimpleWebActivity.class);
                 startActivity(gotoActivity);
                 break;
             default:
