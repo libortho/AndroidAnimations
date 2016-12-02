@@ -23,8 +23,8 @@ public class SimpleWebActivity extends AppCompatActivity {
         setContentView(R.layout.activity_simpleweb);
 
         bindViews();
-        //initializeWebView2();
-        webView.loadUrl("file://10.1.90.24/temp/javadoc.html");
+        initializeWebView2();
+        //webView.loadUrl("file://10.1.90.24/temp/javadoc.html");
 
 
     }

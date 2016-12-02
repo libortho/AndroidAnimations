@@ -1,8 +1,8 @@
 package com.vecoder.demo.animations;
 
+import com.vecoder.demo.animations.bluetooth.BluetoothActivity;
 import com.vecoder.demo.animations.dialogfragment.DialogFragmentDemoAct;
 import com.vecoder.demo.animations.imdig.ScrollViewActivity;
-import com.vecoder.demo.animations.imdig.VideoPlayerDemoActivity;
 import com.vecoder.demo.animations.webview.SimpleWebActivity;
 
 import android.content.Intent;
@@ -20,15 +20,15 @@ import java.util.List;
 /**
  * Created by v.gacina on 6/29/2016.
  */
-public class MainChooser extends AppCompatActivity implements AdapterView.OnItemClickListener{
+public class MainChooser extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView mListView;
 
     private static final String[] ITEMS = {
-        "Dialog fragment Animations",
-        "Improve Digital Ads",
-        "Improve Digital Video Player",
-        "Simple Web View"
+            "Dialog fragment Animations",
+            "Improve Digital Ads",
+            "Simple Web View",
+            "Bluetooth Sample"
     };
 
 
@@ -41,13 +41,11 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
         setListAdapter();
     }
 
-    private void bindViews(){
+    private void bindViews() {
         mListView = (ListView) findViewById(R.id.lvMainChooser);
-
-
     }
 
-    private void setListAdapter(){
+    private void setListAdapter() {
         List<String> items = Arrays.asList(ITEMS);
         MainChooserListAdapter adapter = new MainChooserListAdapter(this, items);
         mListView.setAdapter(adapter);
@@ -57,7 +55,7 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         Intent gotoActivity;
-        switch(position){
+        switch (position) {
             case 0:
                 gotoActivity = new Intent(this, DialogFragmentDemoAct.class);
                 startActivity(gotoActivity);
@@ -67,11 +65,11 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
                 startActivity(gotoActivity);
                 break;
             case 2:
-                gotoActivity = new Intent(this, VideoPlayerDemoActivity.class);
+                gotoActivity = new Intent(this, SimpleWebActivity.class);
                 startActivity(gotoActivity);
                 break;
             case 3:
-                gotoActivity = new Intent(this, SimpleWebActivity.class);
+                gotoActivity = new Intent(this, BluetoothActivity.class);
                 startActivity(gotoActivity);
                 break;
             default:

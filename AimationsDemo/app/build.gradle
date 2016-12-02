@@ -28,8 +28,10 @@ dependencies {
     //compile(name:'360sdk-1.3-20160727.102704-17', ext:'aar')
     //360sdk-1.3-20160914.165547-36-api14Release   360sdk-1.3-20160727.102704-17
     // Add dependency for the 360SDK
-    compile( 'com.improvedigital:360sdk:1.3-SNAPSHOT:api14Release@aar'){
-        transitive true
-    }
+    //compile( 'com.improvedigital:360sdk:1.3-SNAPSHOT:api14Release@aar'){
+    //    transitive true
+    //}
+
+    compile 'com.improvedigital:360sdk:1.3'
 
 }

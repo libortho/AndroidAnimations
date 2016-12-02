@@ -21,11 +21,11 @@
 
         <activity android:name="com.vecoder.demo.animations.imdig.ScrollViewActivity"/>
 
-        <activity android:name="com.vecoder.demo.animations.imdig.VideoPlayerDemoActivity"
-            android:label="Improve Digital Video Player"/>
-
         <activity android:name="com.vecoder.demo.animations.webview.SimpleWebActivity"
             android:label="Simple Web View"/>
+
+        <activity android:name=".bluetooth.BluetoothActivity"
+            android:label="Bluetooth example"/>
 
         <activity android:name="com.vecoder.demo.animations.MainChooser"
             android:label="Animations Demo">

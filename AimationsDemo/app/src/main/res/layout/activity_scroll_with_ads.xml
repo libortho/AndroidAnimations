@@ -45,10 +45,7 @@
             android:layout_gravity="center_horizontal"
             android:background="@color/adview_background_color"
             ads:placementId="847576"
-            ads:useSecureConnection="true"
-            ads:animatingType="left"
-            ads:animatingDuration="1200"/>
-
+            ads:useSecureConnection="true"/>
     </LinearLayout>
 
 </ScrollView>
