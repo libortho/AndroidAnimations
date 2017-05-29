@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Animations</string>
+
+    <string name="passat_info_1">The CC ("Comfort Coupé")[9] is a 4-door coupé version of the Passat. It debuted at the 2008 North American International Auto Show in Detroit. Originally aimed at competing with the similarly styled Mercedes CLS, the Passat CC intends to be more stylish and luxurious than the previously released Passat B6.</string>
+
+    <string name="passat_info_2">Volkswagen facelifted the Passat CC in late 2011 for the 2012 year with styling updates akin to those of the larger Phaeton. For the updated model, Volkswagen has dropped the Passat name for all markets, now matching the Volkswagen CC branding used since 2008 in North America.</string>
 </resources>

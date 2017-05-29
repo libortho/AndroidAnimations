@@ -7,6 +7,7 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -26,6 +27,9 @@
 
         <activity android:name=".bluetooth.BluetoothActivity"
             android:label="Bluetooth example"/>
+
+        <activity android:name=".phone.SimpleCallerActivity"
+            android:label="Simple Caller"/>
 
         <activity android:name="com.vecoder.demo.animations.MainChooser"
             android:label="Animations Demo">

@@ -38,7 +38,7 @@ public class ScrollViewActivity extends AppCompatActivity {
     }
 
     private void bindView(){
-        mDemoText = (TextView) findViewById(R.id.tvScrollDemoLabel);
+        mDemoText = (TextView) findViewById(R.id.tv_scroll_demo_label);
         mAdView = (ImproveDigitalAdView) findViewById(R.id.ad_view);
     }
 }

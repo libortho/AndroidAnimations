@@ -3,6 +3,7 @@ package com.vecoder.demo.animations;
 import com.vecoder.demo.animations.bluetooth.BluetoothActivity;
 import com.vecoder.demo.animations.dialogfragment.DialogFragmentDemoAct;
 import com.vecoder.demo.animations.imdig.ScrollViewActivity;
+import com.vecoder.demo.animations.phone.SimpleCallerActivity;
 import com.vecoder.demo.animations.webview.SimpleWebActivity;
 
 import android.content.Intent;
@@ -28,7 +29,8 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
             "Dialog fragment Animations",
             "Improve Digital Ads",
             "Simple Web View",
-            "Bluetooth Sample"
+            "Bluetooth Sample",
+            "Phone Dialer"
     };
 
 
@@ -70,6 +72,10 @@ public class MainChooser extends AppCompatActivity implements AdapterView.OnItem
                 break;
             case 3:
                 gotoActivity = new Intent(this, BluetoothActivity.class);
+                startActivity(gotoActivity);
+                break;
+            case 4:
+                gotoActivity = new Intent(this, SimpleCallerActivity.class);
                 startActivity(gotoActivity);
                 break;
             default:
