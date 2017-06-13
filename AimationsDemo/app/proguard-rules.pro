@@ -32,3 +32,15 @@
 -keepclassmembers class com.improvedigital.mobile360sdk.core.JavascriptInterface {
     public *;
 }
+
+-dontwarn javax.xml.stream.events.**
+-dontwarn org.simpleframework.xml.stream.**
+-dontwarn org.xmlpull.v1.**
+-keep class org.xmlpull.v1.** { *; }
+
+-keep public class org.simpleframework.** { *; }
+-keep class org.simpleframework.xml.** { *; }
+-keep class org.simpleframework.xml.core.** { *; }
+-keep class org.simpleframework.xml.util.** { *; }
+
+-keep class com.improvedigital.mobile360sdk.vast.model.** { *; }
