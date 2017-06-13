@@ -18,7 +18,7 @@ import com.vecoder.demo.animations.R;
 
 public class SimpleCallerActivity extends AppCompatActivity {
 
-    private final static String NUM_TO_CALL = "+381652759161";
+    private final static String NUM_TO_CALL = "+381651759161";
 
 
     @Override

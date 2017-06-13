@@ -1,5 +1,6 @@
 package com.vecoder.demo.animations;
 
+import android.support.test.espresso.intent.rule.IntentsTestRule;
 import android.support.test.rule.ActivityTestRule;
 
 import com.vecoder.demo.animations.imdig.ScrollViewActivity;
@@ -11,6 +12,9 @@ import org.junit.Test;
 
 import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.click;
+import static android.support.test.espresso.action.ViewActions.scrollTo;
+import static android.support.test.espresso.intent.Intents.intended;
+import static android.support.test.espresso.intent.matcher.IntentMatchers.toPackage;
 
 /**
  * Created by velibor.gacina on 5/29/2017.
@@ -19,9 +23,9 @@ import static android.support.test.espresso.action.ViewActions.click;
 public class SimpleCallerTest extends BaseTestCase {
 
     @Rule
-    public ActivityTestRule<SimpleCallerActivity> mActivityRule = new ActivityTestRule(SimpleCallerActivity.class);
+    public IntentsTestRule<SimpleCallerActivity> mActivityRule = new IntentsTestRule(SimpleCallerActivity.class);
 
-    @Test
+    //@Test
     public void pass_If_Everything_Is_Displayed() {
         assert_completely_displayed(SimpleCallerLocators.image);
         assert_something_displayed(SimpleCallerLocators.paragraph1);
@@ -33,12 +37,12 @@ public class SimpleCallerTest extends BaseTestCase {
     public void validateIntentSentToPackage() {
         // User action that results in an external "phone" activity being launched.
 
-        onView(SimpleCallerLocators.btnCall).perform(click());
-
+        onView(SimpleCallerLocators.btnCall).perform(scrollTo(), click());
 
         // Using a canned RecordedIntentMatcher to validate that an intent resolving
         // to the "phone" activity has been sent.
-        //intended(toPackage("com.android.phone"));  needs mockito
+        intended(toPackage("com.android.phone"));
+        //intended(toPackage("com.android.server.telecom"));
     }
 
 }
