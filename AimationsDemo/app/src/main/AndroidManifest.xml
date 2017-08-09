@@ -32,6 +32,9 @@
         <activity android:name=".phone.SimpleCallerActivity"
             android:label="Simple Caller"/>
 
+        <activity android:name=".telephony.TelephonyPlayActivity"
+            android:label="Telephony Play"/>
+
         <activity android:name="com.vecoder.demo.animations.MainChooser"
             android:label="Animations Demo">
             <intent-filter>
